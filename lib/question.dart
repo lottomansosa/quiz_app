@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 class QuestionWidget extends StatefulWidget{
   @override
   State<StatefulWidget> createState() {
-    return _QuestionWidget();
+    return _QuestionScreenState();
   }
   
 
 
 }
 
-class _QuestionWidget extends State<QuestionWidget>{
+class _QuestionScreenState extends State<QuestionWidget>{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    throw UnimplementedError();
+    return Text("Questions Screen");
   }
 
 
