@@ -12,25 +12,25 @@ class QuestionWidget extends StatefulWidget{
 
 }
 
-class _QuestionScreenState extends State<QuestionWidget>{
+class _QuestionScreenState extends State<QuestionWidget> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(context) {
     final currentQuestion = questions[0];
-    // TODO: implement build
     return Center(
-    child: Column(
+      child: Column(
         mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(currentQuestion.text, style: TextStyle(color: Colors.white)),
+          Text(currentQuestion.text, style: TextStyle(color: Colors.white),
+          textAlign: TextAlign.center,
+          ),
           const SizedBox(height: 30),
-          AnswerButton(answerText: currentQuestion.answers[0], onTap:() {}),
-          AnswerButton(answerText: currentQuestion.answers[1], onTap:() {}),
-          AnswerButton(answerText: currentQuestion.answers[2], onTap:() {}),
-          AnswerButton(answerText: currentQuestion.answers[3], onTap:() {}),
+          ...currentQuestion.answers.map((item) {
+            return AnswerButton(answerText: item, onTap: () {});
+          }),
         ],
       ),
     );
   }
-
-
 }
