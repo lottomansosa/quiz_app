@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_app/data/questions.dart';
 import 'package:quiz_app/question.dart';
+import 'package:quiz_app/results_screen.dart';
 import 'package:quiz_app/start_screen.dart';
 
 class QuizStart extends StatefulWidget{
@@ -13,16 +15,23 @@ class QuizStart extends StatefulWidget{
 
   class _QuizState extends State<QuizStart>{
     Widget? activeScreen;
-    final List<String> selectedAnswers = [];
+    List<String> selectedAnswers = [];
      //Make in quiz so everything could see it
     void chooseAnswer(String answer) {
+
       selectedAnswers.add(answer);
+        if(selectedAnswers.length == questions.length){
+          //selectedAnswers = []; You dont want to delete it
+          activeScreen = ResultsScreen(chosenAnswer: selectedAnswers);
+
+        }
     }
 
     void switchScreen(){
     
       setState((){
         activeScreen = QuestionWidget(onSelectedAnswer: chooseAnswer,);
+      
       });
     }
     void initState()
