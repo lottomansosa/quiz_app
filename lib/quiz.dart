@@ -21,7 +21,7 @@ class QuizStart extends StatefulWidget{
 
       selectedAnswers.add(answer);
         if(selectedAnswers.length == questions.length){
-          //selectedAnswers = []; You dont want to delete it
+          selectedAnswers = []; //You dont want to delete it
           activeScreen = ResultsScreen(chosenAnswer: selectedAnswers);
 
         }
