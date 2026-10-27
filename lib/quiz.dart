@@ -21,8 +21,12 @@ class QuizStart extends StatefulWidget{
 
       selectedAnswers.add(answer);
         if(selectedAnswers.length == questions.length){
-          selectedAnswers = []; //You dont want to delete it
-          activeScreen = ResultsScreen(chosenAnswer: selectedAnswers);
+          
+          setState(() {
+            //selectedAnswers = []; //You dont want to delete it
+            activeScreen = ResultsScreen(chosenAnswer: selectedAnswers);
+          });
+          
 
         }
     }
@@ -30,7 +34,7 @@ class QuizStart extends StatefulWidget{
     void switchScreen(){
     
       setState((){
-        activeScreen = QuestionWidget(onSelectedAnswer: chooseAnswer,);
+        activeScreen = QuestionWidget(onSelectedAnswer: chooseAnswer);
       
       });
     }
