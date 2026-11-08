@@ -31,10 +31,10 @@ class ResultsScreen extends StatelessWidget{
   {
     final summaryData = getSummaryData();
 
-    var numTotalQuestions = questions.length;
-    var numCorrectQuestions = summaryData.where(
+    final numTotalQuestions = questions.length;
+    final numCorrectQuestions = summaryData.where(
       (data){
-      return data['correct_answer'] == ['user_answer'];
+      return data['correct_answer'] == data['user_answer'];
     }
     ).length;
     return SizedBox(
