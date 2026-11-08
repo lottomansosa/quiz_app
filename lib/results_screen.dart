@@ -2,6 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:quiz_app/data/Questions.dart';
 import 'package:quiz_app/questions_summary.dart';
+import 'package:quiz_app/quiz.dart';
+import 'package:quiz_app/start_screen.dart';
 
 
 class ResultsScreen extends StatelessWidget{
@@ -40,15 +42,15 @@ class ResultsScreen extends StatelessWidget{
     return SizedBox(
       width: double.infinity,
       child: Container(
-        margin: const EdgeInsets.all(40),
+        margin: const EdgeInsets.all(50),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children:  [
                Text('You answered $numCorrectQuestions of $numTotalQuestions questions Correctly'),
-              const SizedBox(height:50,),
+              const SizedBox(height:50,width: 100,),
               QuestionsSummary(summaryData: summaryData),
-              const SizedBox(height:10,),
+              const SizedBox(height:300, width: 400),
               TextButton(
                 onPressed: (){},
                 child: const Text('Restart Quiz'),

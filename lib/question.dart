@@ -36,7 +36,7 @@ class _QuestionScreenState extends State<QuestionWidget> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(currentQuestion.text, style: TextStyle(color: Colors.white),
+          Text(currentQuestion.text, style: GoogleFonts.abel(color: Colors.white,fontSize: 22,fontWeight: FontWeight.bold),
           textAlign: TextAlign.center,
           ),
           const SizedBox(height: 30),
