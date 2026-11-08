@@ -24,11 +24,13 @@ class QuizStart extends StatefulWidget{
           
           setState(() {
             //selectedAnswers = []; //You dont want to delete it
-            activeScreen = ResultsScreen(chosenAnswer: selectedAnswers);
+            activeScreen = ResultsScreen(chosenAnswers: selectedAnswers);
           });
           
 
         }
+
+        
     }
 
     void switchScreen(){
