@@ -4,6 +4,7 @@ import 'package:quiz_app/data/Questions.dart';
 import 'package:quiz_app/questions_summary.dart';
 import 'package:quiz_app/quiz.dart';
 import 'package:quiz_app/start_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 
 class ResultsScreen extends StatelessWidget{
@@ -47,13 +48,13 @@ class ResultsScreen extends StatelessWidget{
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children:  [
-               Text('You answered $numCorrectQuestions of $numTotalQuestions questions Correctly'),
+               Text('You answered $numCorrectQuestions of $numTotalQuestions questions Correctly', style: GoogleFonts.oswald(color: const Color.fromARGB(137, 223, 249, 199),fontSize: 24)),
               const SizedBox(height:50,width: 50,),
               QuestionsSummary(summaryData: summaryData),
               const SizedBox(height:10, width: 50),
               TextButton(
                 onPressed: (){},
-                child: const Text('Restart Quiz'),
+                child:  Text('Restart Quiz', style: GoogleFonts.lato(color: const Color.fromARGB(255, 255, 0, 0), fontSize: 18),),
               )
             ],
           ),
